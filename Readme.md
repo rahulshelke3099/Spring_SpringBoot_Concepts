@@ -49,8 +49,7 @@ public class AppConfig {
 }
 Annotation Example:
 
-java
-Copy code
+
 @Component
 public class MyService {
 private final MyRepository repository;
@@ -121,3 +120,98 @@ Summary
 Inversion of Control (IoC) is a principle where the control of object creation and management is inverted, being handled by the Spring container instead of the application code.
 Dependency Injection (DI) is a specific form of IoC where the dependencies are injected into a class by the container, rather than the class creating them itself.
 IoC in Spring leads to more maintainable, testable, and flexible applications by promoting loose coupling between components.
+
+
+Without Inversion of Control (IoC), a service (or any class) is responsible for creating and managing its dependencies internally. This leads to tight coupling between the service and its dependencies. Here's why:
+
+1. Direct Dependency Creation
+   When a class directly creates instances of its dependencies, it becomes tightly coupled to those specific implementations. This means that the class cannot function without the specific dependencies it creates.
+
+Example:
+
+java
+Copy code
+public class MyService {
+private MyRepository repository;
+
+    public MyService() {
+        this.repository = new MyRepository(); // Directly creating the dependency
+    }
+
+    public void performAction() {
+        // Use repository to perform some action
+        repository.save();
+    }
+}
+Explanation:
+
+The MyService class directly creates an instance of MyRepository within its constructor.
+If you want to use a different implementation of MyRepository (e.g., a MockRepository for testing or a JpaRepository for production), you would have to modify the MyService class itself. This tightly couples MyService to MyRepository.
+If MyRepository has its own dependencies (like a database connection), MyService is also indirectly responsible for managing those, making the code more complex and harder to maintain.
+2. Reduced Flexibility
+   With direct dependency creation, you lose the flexibility to easily swap out dependencies. If the MyService class directly instantiates MyRepository, it's difficult to change the implementation of MyRepository without modifying MyService.
+
+Example:
+
+java
+Copy code
+public class MyService {
+private MyRepository repository;
+
+    public MyService() {
+        this.repository = new MyRepository(); // Fixed implementation
+    }
+}
+Explanation:
+
+If you decide to use a different repository implementation (like AdvancedRepository), you need to change the code inside MyService. This reduces the flexibility of your design and makes your code less modular.
+3. Harder to Test
+   Tight coupling makes unit testing difficult because the class always uses the real dependency, even in test scenarios. This often requires setting up the actual environment (like a database) for testing, which can be cumbersome and slow.
+
+Example:
+
+java
+Copy code
+public class MyService {
+private MyRepository repository;
+
+    public MyService() {
+        this.repository = new MyRepository(); // Dependency created internally
+    }
+
+    public void performAction() {
+        repository.save();
+    }
+}
+Explanation:
+
+If MyRepository interacts with a database, testing MyService would require setting up a database. You can't easily replace MyRepository with a mock or stub for unit testing, making it harder to isolate and test MyService's logic.
+4. Code Duplication
+   When you directly instantiate dependencies within your classes, the same dependency creation logic may be duplicated across multiple classes, leading to code duplication and making your application harder to maintain.
+
+Example:
+
+java
+Copy code
+public class AnotherService {
+private MyRepository repository;
+
+    public AnotherService() {
+        this.repository = new MyRepository(); // Duplicated dependency creation
+    }
+
+    public void performAction() {
+        repository.save();
+    }
+}
+Explanation:
+
+If AnotherService also needs MyRepository, it will need to create a new instance of it, duplicating the dependency creation logic. If the way MyRepository is created changes, you would have to update this logic in every class that uses it.
+Summary: How Tight Coupling Occurs Without IoC
+Direct Dependency Creation: The service class is responsible for creating and managing its dependencies, leading to tight coupling with those specific implementations.
+Reduced Flexibility: The service cannot easily swap out or modify dependencies without changing its code.
+Testing Challenges: The service is harder to unit test because it's tightly coupled to its real dependencies.
+Code Duplication: Dependency creation logic may be repeated across multiple classes, leading to maintenance challenges.
+How IoC Solves These Problems
+With IoC, the responsibility of creating and injecting dependencies is handed over to a container (like Spring), allowing the service class to focus on its core logic without worrying about the specifics of dependency creation and management.
+Loose Coupling: The service only depends on interfaces or abstract types, and the actual implementations are provided by the IoC container, making the code more flexible and easier to test and maintain.

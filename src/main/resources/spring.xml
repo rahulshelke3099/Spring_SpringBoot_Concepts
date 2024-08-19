@@ -8,9 +8,10 @@
 
         <bean id="alien" class="org.example.Alien" scope="prototype">
             <property name="age" value="12"></property>
+            <property name="laptop" ref="laptop"></property>
         </bean>
 
-
+<bean id="laptop" class="org.example.Laptop"></bean>
     <!-- bean definitions here -->
 
 </beans>

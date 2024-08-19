@@ -6,10 +6,24 @@
 
 <!--    <bean id="alien" class="org.example.Alien" scope="prototype"></bean>-->
 
-        <bean id="alien" class="org.example.Alien" scope="prototype">
-            <property name="age" value="12"></property>
-            <property name="laptop" ref="laptop"></property>
-        </bean>
+<!--Setter injection  -->
+<!--        <bean id="alien" class="org.example.Alien" scope="prototype">-->
+<!--            <property name="age" value="12"></property>-->
+<!--            <property name="laptop" ref="laptop"></property>-->
+<!--        </bean>-->
+
+
+<!-- Constructor Injection default is sequence. If not in sequence it will error. We can use type   -->
+<!--    <bean id="alien" class="org.example.Alien" >-->
+<!--        <constructor-arg type="org.example.Laptop" ref="laptop"></constructor-arg>-->
+<!--        <constructor-arg type="int" value="12"></constructor-arg>-->
+<!--    </bean>-->
+
+<!--    Using index-->
+<!--    <bean id="alien" class="org.example.Alien" >-->
+<!--        <constructor-arg index="1" name="laptop" ref="laptop"></constructor-arg>-->
+<!--        <constructor-arg index="0" name="age" value="12"></constructor-arg>-->
+<!--    </bean>-->
 
 <bean id="laptop" class="org.example.Laptop"></bean>
     <!-- bean definitions here -->

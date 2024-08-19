@@ -27,6 +27,11 @@ public class Alien {
         System.out.println("Alien Object Created");
     }
 
+    public Alien(int age, Laptop laptop) {
+        this.age = age;
+        this.laptop = laptop;
+    }
+
     public void code() {
         System.out.println("Coding");
         laptop.compile();

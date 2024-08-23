@@ -45,6 +45,15 @@
         <property name="computer" ref="computer1"></property>
     </bean>
 
+<!--    Inner bean, means this inner bean will not be used by other-->
+<!--    <bean id="alien" class="org.example.Alien" autowire="byType">-->
+<!--        <property name="age" value="12"></property>-->
+<!--        <property name="computer">-->
+<!--            <bean id="computer1" class="org.example.Desktop" lazy-init="true"></bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    -->
+
 
 </beans>
 

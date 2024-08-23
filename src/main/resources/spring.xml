@@ -25,8 +25,26 @@
 <!--        <constructor-arg index="0" name="age" value="12"></constructor-arg>-->
 <!--    </bean>-->
 
-<bean id="laptop" class="org.example.Laptop"></bean>
-    <!-- bean definitions here -->
+<bean id="computer2" class="org.example
+.Laptop" primary="true"></bean>
+<bean id="computer1" class="org.example.Desktop" lazy-init="true"></bean>
+
+<!--&lt;!&ndash;It will inject laptop as autowire by name is there&ndash;&gt;-->
+<!--            <bean id="alien" class="org.example.Alien" autowire="byName">-->
+<!--                <property name="age" value="12"></property>-->
+<!--&lt;!&ndash;                <property name="computer" ref="laptop"></property>&ndash;&gt;-->
+<!--            </bean>-->
+
+<!--    <bean id="alien" class="org.example.Alien" autowire="byName">-->
+<!--        <property name="age" value="12"></property>-->
+<!--        <property name="computer" ref="laptop"></property>-->
+<!--    </bean>-->
+
+    <bean id="alien" class="org.example.Alien" autowire="byType">
+        <property name="age" value="12"></property>
+        <property name="computer" ref="computer1"></property>
+    </bean>
+
 
 </beans>
 

@@ -4,16 +4,16 @@ public class Alien {
 
     private int age;
 
-    public Laptop getLaptop() {
-        return laptop;
+    public Computer getComputer() {
+        return computer;
     }
 
-    public void setLaptop(Laptop laptop) {
-        System.out.println("Setter called for laptop");
-        this.laptop = laptop;
+    public void setComputer(Computer computer) {
+        System.out.println("Setter called for computer");
+        this.computer = computer;
     }
 
-    private Laptop  laptop;
+    private Computer  computer;
 
     public int getAge() {
         return age;
@@ -27,13 +27,13 @@ public class Alien {
         System.out.println("Alien Object Created");
     }
 
-    public Alien(int age, Laptop laptop) {
+    public Alien(int age, Computer computer) {
         this.age = age;
-        this.laptop = laptop;
+        this.computer = computer;
     }
 
     public void code() {
         System.out.println("Coding");
-        laptop.compile();
+        computer.compile();
     }
 }

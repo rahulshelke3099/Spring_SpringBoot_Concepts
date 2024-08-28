@@ -8,7 +8,8 @@ public class AppMain {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        Desktop desktop = context.getBean("desk1",Desktop.class);
+        Desktop desktop = context.getBean(Desktop.class);
+        Desktop desktop1 = context.getBean(Desktop.class);
         desktop.compile();
     }
 }

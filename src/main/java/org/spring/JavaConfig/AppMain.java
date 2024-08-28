@@ -13,9 +13,9 @@ public class AppMain {
 //        Desktop desktop1 = context.getBean(Desktop.class);
 //        desktop.compile();
 
-        Alien alien = (Alien) context.getBean("alien");
+        Alien alien = (Alien) context.getBean(Alien.class);
 
-        Alien alien1 = context.getBean("alien", Alien.class);
+//        Alien alien1 = context.getBean("alien", Alien.class);
 
         alien.getAge();
         System.out.println(alien.getAge());

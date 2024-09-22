@@ -1,5 +1,18 @@
 package org.spring.JavaConfig;
 
+//When to Use:
+//Use @Bean when:
+//
+//You need fine-grained control over bean instantiation.
+//The object you're configuring is from a third-party library.
+//You need to configure beans conditionally or dynamically.
+//
+//Use @Component when:
+//
+//You want Spring to automatically detect and manage the bean.
+//You’re dealing with custom classes like services, repositories, or controllers.
+//Simplicity is preferred over customization of bean creation.
+
 import org.example.Alien;
 import org.example.Computer;
 import org.example.Desktop;

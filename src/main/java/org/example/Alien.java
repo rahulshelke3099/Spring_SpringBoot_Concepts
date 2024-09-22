@@ -9,14 +9,15 @@ public class Alien {
 
     private int age;
 
-    @Autowired
-    @Qualifier("laptop")
+//    @Autowired
+//    @Qualifier("laptop")    (
     private Computer  computer;
 
     public Computer getComputer() {
         return computer;
     }
 
+    @Autowired
     public void setComputer(Computer computer) {
         System.out.println("Setter called for computer");
         this.computer = computer;

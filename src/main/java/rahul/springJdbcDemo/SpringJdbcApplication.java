@@ -23,15 +23,25 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import rahul.springJdbcDemo.model.Student;
+import rahul.springJdbcDemo.service.StudentService;
+
+import java.util.List;
 
 @SpringBootApplication
 public class SpringJdbcApplication {
     public static void main(String[] args) {
      ApplicationContext context = SpringApplication.run(SpringJdbcApplication.class);
 
+     StudentService service = context.getBean(StudentService.class);
+
      Student s = context.getBean(Student.class);
      s.setName("rahul");
      s.setMarks(100);
      s.setRollno(1);
+
+        service.addStudent(s);
+        List<Student> students = service.getStudents();
+        System.out.println(students);
+
     }
 }

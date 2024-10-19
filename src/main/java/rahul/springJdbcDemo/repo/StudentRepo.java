@@ -31,20 +31,24 @@ public class StudentRepo {
     }
 
     public List<Student> findAll() {
-       List<Student> students = new ArrayList<>();
        String sql="select * from student";
-        RowMapper<Student> studentRowMapper = new RowMapper<Student>() {
-            @Override
-            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Student student = new Student();
-                student.setRollno(rs.getInt("rollno"));
-                student.setName(rs.getString("name"));
-                student.setMarks(rs.getInt("marks"));
-                students.add(student);
-                return student;
-            }
-        };
-        jdbc.query(sql,studentRowMapper);
-        return students;
+//        RowMapper<Student> studentRowMapper = new RowMapper<Student>() {
+//            @Override
+//            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+//                Student student = new Student();
+//                student.setRollno(rs.getInt("rollno"));
+//                student.setName(rs.getString("name"));
+//                student.setMarks(rs.getInt("marks"));
+//                return student;
+//            }
+//        };
+
+        return jdbc.query(sql,(rs,rowNum)-> {
+            Student student = new Student();
+            student.setRollno(rs.getInt("rollno"));
+            student.setName(rs.getString("name"));
+            student.setMarks(rs.getInt("marks"));
+            return student;
+        }) ;
     }
 }

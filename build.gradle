@@ -25,6 +25,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     runtimeOnly 'com.h2database:h2'
+
+    // Dependencies for servlet
+    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.0.0'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:8.5.99'
 }
 
 tasks.named('test') {

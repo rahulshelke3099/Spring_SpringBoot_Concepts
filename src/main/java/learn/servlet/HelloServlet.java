@@ -1,9 +1,13 @@
 package learn.servlet;
 
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * A Java Servlet is a Java class used to extend the capabilities of a server, typically a web server.
@@ -57,9 +61,13 @@ import org.springframework.boot.autoconfigure.web.ServerProperties;
  * ServletContext: Allows servlets to interact with the web application's environment and
  * share data between servlets.
  */
+
 public class HelloServlet extends HttpServlet {
 
-    public void service(HttpServletRequest request, HttpServletResponse response) {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println(" In Service");
+        response.setContentType("text/html");
+       PrintWriter out =  response.getWriter();
+       out.println("<h2><b>Hello world</b></h2>");
     }
 }

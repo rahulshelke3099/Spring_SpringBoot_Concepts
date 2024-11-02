@@ -1,4 +1,5 @@
 package rahul.springJdbcDemo.service;
+/**
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,6 +7,7 @@ import rahul.springJdbcDemo.model.Student;
 import rahul.springJdbcDemo.repo.StudentRepo;
 
 import java.util.List;
+
 //When to Use Each:
 //Use JDBC Template if:
 //
@@ -44,3 +46,4 @@ public class StudentService {
         return repo.findAll();
     }
 }
+**/

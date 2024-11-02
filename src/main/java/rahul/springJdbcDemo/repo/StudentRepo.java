@@ -1,5 +1,5 @@
 package rahul.springJdbcDemo.repo;
-
+/**
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
+
+
 @Repository
 public class StudentRepo {
 
@@ -52,3 +54,4 @@ public class StudentRepo {
         }) ;
     }
 }
+**/

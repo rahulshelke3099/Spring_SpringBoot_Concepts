@@ -1,5 +1,5 @@
 package rahul.springJdbcDemo;
-
+/**
 //Spring JdbcTemplate is a powerful mechanism to connect to the database and execute SQL queries.
 //        It internally uses JDBC api,
 //        but eliminates a lot of problems of JDBC API.
@@ -45,3 +45,4 @@ public class SpringJdbcApplication {
 
     }
 }
+**/

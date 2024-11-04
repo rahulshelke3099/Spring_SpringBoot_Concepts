@@ -9,5 +9,8 @@
 
 
        <!--  using jstl tags -->
-        <h2>Result is: ${result}  </h2></body>
+        <h2>Result is: ${result}  </h2> -->
+         <h2>Result is: ${alien}  </h2>
+
+</body>
 </html>

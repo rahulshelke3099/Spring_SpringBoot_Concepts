@@ -12,7 +12,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String HomePage() {
-        return "index.jsp";
+        return "index";
     }
 
     @RequestMapping("/add")
@@ -23,6 +23,6 @@ public class HomeController {
        int result = num1 + num2;
 //       httpSession.setAttribute("result", result);
         model.addAttribute("result",result);
-        return "result.jsp";
+        return "result";
     }
 }

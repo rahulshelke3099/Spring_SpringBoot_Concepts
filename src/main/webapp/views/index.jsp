@@ -5,6 +5,8 @@
 </head>
 <body>
 <h2>Calculator</h2>
+<p> Welcome to ${course} world !!!</p>
+
 <form action="add">
                 <label for="num1">Enter 1st Number :</label>
                 <input type="text" id=num1" name="num1"><br>

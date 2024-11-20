@@ -1,4 +1,5 @@
-A Deployment Descriptor (typically web.xml) is an XML file used in Java EE (Jakarta EE) web applications to configure and manage various aspects of the application. It acts as the configuration file for the web application and is found under the WEB-INF directory of the application’s WAR (Web Application Archive) file.
+A Deployment Descriptor (typically web.xml) is an XML file used in Java EE (Jakarta EE) web applications to configure and manage various aspects of the application.
+It acts as the configuration file for the web application and is found under the WEB-INF directory of the application’s WAR (Web Application Archive) file.
 
 Although newer approaches like annotations have reduced the need for explicit deployment descriptors, they are still relevant for legacy systems and offer configuration flexibility.
 

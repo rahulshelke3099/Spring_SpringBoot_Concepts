@@ -215,3 +215,21 @@ Code Duplication: Dependency creation logic may be repeated across multiple clas
 How IoC Solves These Problems
 With IoC, the responsibility of creating and injecting dependencies is handed over to a container (like Spring), allowing the service class to focus on its core logic without worrying about the specifics of dependency creation and management.
 Loose Coupling: The service only depends on interfaces or abstract types, and the actual implementations are provided by the IoC container, making the code more flexible and easier to test and maintain.
+
+**Content Negotiation** in Spring Boot REST allows the client to specify 
+the format (media type) of the data it expects in a request or response.
+This mechanism enables a REST API to serve multiple formats, such as JSON, 
+XML, or others, based on client requirements.
+
+How Spring Boot Handles Content Negotiation
+Spring Boot uses HttpMessageConverters to convert data between Java objects and various formats (like JSON or XML). It automatically configures converters based on the dependencies in the classpath.
+
+JSON: Supported by MappingJackson2HttpMessageConverter (enabled when Jackson is on the classpath).
+XML: Supported by Jaxb2RootElementHttpMessageConverter (enabled when JAXB is on the classpath).
+Key Configuration for Content Negotiation
+1. Content Negotiation Strategies
+   Spring Boot uses the following strategies in order of priority:
+
+Path Extension: Determines the format based on the file extension in the URL (e.g., /api/users.json).
+Query Parameter: Uses a parameter like ?format=json.
+Header-Based Negotiation: Inspects the Accept header in the request.

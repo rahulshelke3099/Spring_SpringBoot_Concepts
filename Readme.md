@@ -238,9 +238,11 @@ Header-Based Negotiation: Inspects the Accept header in the request.
 --------------------------------------------------------------------------------------
 Hibernate ORM
 Overview:
-Hibernate is an Object-Relational Mapping (ORM) tool that provides an abstraction over traditional JDBC.
+Hibernate is an Object-Relational Mapping (ORM) tool that provides an abstraction
+over traditional JDBC.
 It maps Java objects to database tables using configuration files or annotations.
-Hibernate implements the JPA (Java Persistence API) specification and offers additional features beyond JPA.
+Hibernate implements the JPA (Java Persistence API) specification and
+offers additional features beyond JPA.
 Key Features:
 Provides automatic table generation from entities.
 Supports advanced caching, lazy loading, and fetching strategies.
@@ -291,7 +293,8 @@ private SessionFactory sessionFactory;
 
 JPA (Java Persistence API)
 Overview:
-JPA is a specification for ORM frameworks, defining a standard way to manage relational data in Java applications.
+JPA is a specification for ORM frameworks, defining a standard way to manage 
+relational data in Java applications.
 It is not an implementation but a set of interfaces.
 Hibernate is one of the most popular implementations of JPA.
 

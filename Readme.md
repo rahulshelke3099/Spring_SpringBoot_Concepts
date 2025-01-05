@@ -1,5 +1,9 @@
 IOC in spring
-Inversion of Control (IoC) is a core principle in the Spring Framework that promotes loose coupling between components in an application. It is the mechanism through which the control of object creation, configuration, and management is transferred from the application code to the Spring container. This allows for more modular, testable, and maintainable code.
+Inversion of Control (IoC) is a core principle in the Spring Framework
+that promotes loose coupling between components in an application. 
+It is the mechanism through which the control of object creation, configuration , 
+and management is transferred from the application code to the Spring container.
+This allows for more modular, testable, and maintainable code.
 
 Key Concepts
 IoC Container:
@@ -463,4 +467,54 @@ For integrating with Spring's transaction and dependency injection support.
 Spring Data JPA:
 For rapid development of Spring applications with minimal boilerplate code.
 Ideal when repository-based development and query abstraction are required.
+
+------------------------------------------
+Spring AOP 
+
+Aspect-Oriented Programming (AOP)
+AOP is a programming paradigm in Spring Framework used to separate cross-cutting concerns (common functionalities used across multiple parts of an application) from the main business logic. This makes the code cleaner, more modular, and easier to maintain.
+
+What Are Cross-Cutting Concerns?
+Cross-cutting concerns are functionalities that affect multiple parts of an application but are not related to the business logic. Examples include:
+
+Logging
+Security checks
+Caching
+Performance monitoring
+Transaction management
+Instead of writing these functionalities in every method or class, AOP lets you define them in one place and apply them wherever needed.
+
+AOP Core Concepts (Terms)
+Aspect
+
+An Aspect is the module that encapsulates the cross-cutting concern (e.g., logging, security).
+It is implemented using a regular class annotated with @Aspect in Spring.
+Advice
+
+Advice is the actual piece of code that is executed at a certain point in the application (e.g., before a method executes).
+Types of Advice:
+Before Advice: Runs before the target method.
+After Advice: Runs after the target method, regardless of its outcome.
+AfterReturning Advice: Runs only if the target method completes successfully.
+AfterThrowing Advice: Runs only if the target method throws an exception.
+Around Advice: Runs both before and after the target method. It has control over whether the method is executed.
+Join Point
+
+A Join Point is any point in the program where an advice can be applied. Examples:
+A method call
+An exception thrown
+Pointcut
+
+A Pointcut defines where (at which Join Points) the advice should be applied.
+It uses expressions to match methods or classes.
+Weaving
+
+Weaving is the process of applying aspects to the target objects.
+It can occur at:
+Compile time
+Runtime (in Spring, weaving happens at runtime)
+Target
+
+The Target is the actual object (class or method) on which the advice is applied.
+
 

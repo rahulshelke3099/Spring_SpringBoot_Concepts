@@ -517,4 +517,16 @@ Target
 
 The Target is the actual object (class or method) on which the advice is applied.
 
+--------------------------------------------------------------------
+Explanation of Join Point
+joinPoint.getSignature().getName():
+
+Retrieves the name of the method being executed (placeOrder or cancelOrder).
+joinPoint.getArgs():
+
+Captures the arguments passed to the method (e.g., 123 or 456).
+joinPoint.getTarget():
+
+Retrieves the target object (the class where the method is defined, OrderService).
+
 
